@@ -20,7 +20,7 @@ export default function Home() {
               InstaWEEN
             </div>
             <div className="self-stretch text-center text-black text-2xl font-bold  py-5">
-              An Instagram Powered by Cloudfare HalloWeen AI
+              An Instagram Powered by Cloudfare Spooky AI Creation
             </div>
             <div className="self-stretch  px-5 py-3 bg-black rounded-xl border border-[#e3e2e4] flex-col justify-start items-start gap-2.5 flex">
               <div className="self-stretch pr-2.5 justify-start items-center gap-[18px] inline-flex">
