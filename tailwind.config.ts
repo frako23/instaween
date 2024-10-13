@@ -11,6 +11,11 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        pumpkinOrange: "#F75F1C",
+        black: "#000000",
+        darkPurple: "#881EE4",
+        ghostGreen: "#85E21F",
+        sweetYellowCorn: "#FFD401",
       },
     },
   },
