@@ -1,5 +1,6 @@
 import FacebookIcon from "@/utils/icons/FacebookIcon";
 import GoogleIcon from "@/utils/icons/GoogleIcon";
+import Link from "next/link";
 import { SiGhostery } from "react-icons/si";
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
             <div className="self-stretch  px-5 py-3 bg-black rounded-xl border border-[#e3e2e4] flex-col justify-start items-start gap-2.5 flex">
               <div className="self-stretch pr-2.5 justify-start items-center gap-[18px] inline-flex">
                 <div className="grow shrink basis-0 h-[38px] pr-2.5 py-2.5 justify-start items-center gap-2.5 flex">
-                  <div className="grow shrink basis-0 text-ghostGreen text-3xl font-semibold leading-[18px]">
+                  <div className="grow shrink basis-0 text-ghostGreen hover:text-sweetYellowCorn text-3xl font-semibold leading-[18px]">
                     Sign in with Facebook
                   </div>
                 </div>
@@ -29,7 +30,7 @@ export default function Home() {
             <div className="self-stretch  px-5 py-3 bg-black rounded-xl border border-[#e3e2e4] flex-col justify-start items-start gap-2.5 flex">
               <div className="self-stretch pr-2.5 justify-start items-center gap-[18px] inline-flex">
                 <div className="grow shrink basis-0 h-[38px] pr-2.5 py-2.5 justify-start items-center gap-2.5 flex">
-                  <div className="grow shrink basis-0 text-ghostGreen text-3xl font-semibold leading-[18px]">
+                  <div className="grow shrink basis-0 text-ghostGreen hover:text-sweetYellowCorn text-3xl font-semibold leading-[18px]">
                     Sign in with Google
                   </div>
                 </div>
@@ -43,10 +44,13 @@ export default function Home() {
                 Or
               </div>
             </div>
-            <div className="self-stretch h-[62px] px-5 py-3 bg-black rounded-xl border border-[#e3e2e4] flex-col justify-start items-start gap-2.5 flex">
+            <Link
+              href="/home"
+              className="self-stretch h-[62px] px-5 py-3 bg-black rounded-xl border border-[#e3e2e4] flex-col justify-start items-start gap-2.5 flex"
+            >
               <div className="self-stretch pr-2.5 justify-start items-center gap-[18px] inline-flex">
                 <div className="grow shrink basis-0 h-[38px] pr-2.5 py-2.5 justify-start items-center gap-2.5 flex">
-                  <div className="grow shrink basis-0 text-ghostGreen text-3xl font-semibold leading-[18px]">
+                  <div className="grow shrink basis-0 text-ghostGreen hover:text-sweetYellowCorn text-3xl font-semibold leading-[18px]">
                     Ghost Sign in
                   </div>
                 </div>
@@ -54,7 +58,7 @@ export default function Home() {
                   <SiGhostery className="w-6 h-6" />
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </main>
