@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "InstaWeen",
+  title: "👻 InstaWeen 🎃",
   description: "A new Instagram powered with Cloudinary Halloween AI",
 };
 
@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="favicon" href="/instaWEEN.png" type="image/png" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} `}>
         {children}
       </body>

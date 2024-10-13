@@ -1,15 +1,27 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { MdHeartBroken } from "react-icons/md";
+import { RiLogoutBoxFill } from "react-icons/ri";
 
 const Header = () => {
   return (
-    <div className="h-20 px-2 bg-pumpkinOrange justify-around items-start gap-2 inline-flex w-full">
-      <div className="grow shrink basis-0 h-20 py-4 justify-center items-center gap-1 flex text-5xl text-black w-3/4">
+    <div className="h-20 px-2 bg-pumpkinOrange justify-around items-start gap-2 inline-flex w-full fixed z-10">
+      <div className=" shrink basis-0 h-20 py-4 justify-center items-center flex text-5xl text-black w-3/4 gap-4">
+        <Image
+          src="/instaWEEN.png"
+          width={48}
+          height={48}
+          alt="instaWEEN logo"
+        />
         InstaWEEEN
       </div>
 
-      <div className="grow shrink basis-0 h-20 py-3 flex-col justify-center items-center gap-1 inline-flex w-1/4">
+      <div className=" shrink basis-0 h-20 py-3 gap-4 justify-center items-center inline-flex w-1/4">
         <MdHeartBroken className="w-8 h-8 text-black" />
+        <Link href="/">
+          <RiLogoutBoxFill className="w-8 h-8 text-black" />
+        </Link>
       </div>
     </div>
   );
