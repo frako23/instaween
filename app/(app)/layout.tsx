@@ -7,12 +7,10 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Header />
-        <div className="py-[80px] overflow-auto">{children}</div>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Header />
+      <div className="py-[80px] overflow-auto">{children}</div>
+      <Footer />
+    </>
   );
 }

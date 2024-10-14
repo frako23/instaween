@@ -3,6 +3,7 @@ import GoogleIcon from "@/utils/icons/GoogleIcon";
 import Image from "next/image";
 import Link from "next/link";
 import { SiGhostery } from "react-icons/si";
+import ButtonLogin from "@/components/ButtonLogin";
 
 export default function Home() {
   return (
@@ -22,30 +23,8 @@ export default function Home() {
             <div className="self-stretch text-center text-black text-2xl font-bold  py-5">
               An Instagram Powered by Cloudfare Spooky AI Creation
             </div>
-            <div className="self-stretch  px-5 py-3 bg-black rounded-xl border border-[#e3e2e4] flex-col justify-start items-start gap-2.5 flex">
-              <div className="self-stretch pr-2.5 justify-start items-center gap-[18px] inline-flex">
-                <div className="grow shrink basis-0 h-[38px] pr-2.5 py-2.5 justify-start items-center gap-2.5 flex">
-                  <div className="grow shrink basis-0 text-ghostGreen hover:text-sweetYellowCorn text-3xl font-semibold leading-[18px]">
-                    Sign in with Facebook
-                  </div>
-                </div>
-                <div className="w-6 h-6 relative">
-                  <FacebookIcon />
-                </div>
-              </div>
-            </div>
-            <div className="self-stretch  px-5 py-3 bg-black rounded-xl border border-[#e3e2e4] flex-col justify-start items-start gap-2.5 flex">
-              <div className="self-stretch pr-2.5 justify-start items-center gap-[18px] inline-flex">
-                <div className="grow shrink basis-0 h-[38px] pr-2.5 py-2.5 justify-start items-center gap-2.5 flex">
-                  <div className="grow shrink basis-0 text-ghostGreen hover:text-sweetYellowCorn text-3xl font-semibold leading-[18px]">
-                    Sign in with Google
-                  </div>
-                </div>
-                <div className="w-6 h-6 relative">
-                  <GoogleIcon />
-                </div>
-              </div>
-            </div>
+            <ButtonLogin text={"Sign in with Facebook"} icon={<FacebookIcon />} />
+            <ButtonLogin text={"Sign in with Google"} icon={<GoogleIcon />} />
             <div className="self-stretch justify-start items-center gap-1 inline-flex">
               <div className="grow shrink basis-0 text-center text-black text-3xl font-semibold uppercase leading-none tracking-wide">
                 Or

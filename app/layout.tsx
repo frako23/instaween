@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "@fontsource/jolly-lodger";
+import { NextAuthProvider } from "./context/AuthContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,7 +31,9 @@ export default function RootLayout({
         <link rel="favicon" href="/instaWEEN.png" type="image/png" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} `}>
-        {children}
+        <NextAuthProvider>
+          {children}
+        </NextAuthProvider>
       </body>
     </html>
   );
