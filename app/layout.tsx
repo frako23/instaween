@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "@fontsource/jolly-lodger";
 import { NextAuthProvider } from "./context/AuthContext";
+import { RouteProtected } from "../components/RouteProtected";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +33,9 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} `}>
         <NextAuthProvider>
-          {children}
+          <RouteProtected>
+            {children}
+          </RouteProtected>
         </NextAuthProvider>
       </body>
     </html>

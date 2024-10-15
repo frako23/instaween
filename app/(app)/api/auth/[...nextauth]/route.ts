@@ -15,6 +15,13 @@ const handler = NextAuth({
     ],
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
+        async signIn({ account }) {
+            if (account?.provider === "google") {
+
+                return true
+            }
+            return false
+        },
         async redirect() {
             return "/home";
         },
