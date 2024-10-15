@@ -1,32 +1,34 @@
 "use client";
 
 import { useImgActionStore } from "@/store/imgActions";
-import { CldImage } from "next-cloudinary";
-import Image from "next/image";
+import { getCldImageUrl } from "next-cloudinary";
 import React from "react";
+import ReactCompareImage from "react-compare-image";
 
 // By default, the CldImage component applies auto-format and auto-quality to all delivery URLs for optimized delivery.
 const Page = () => {
   const uploadedImage = useImgActionStore((state) => state.uploadedImage);
   console.log(uploadedImage);
   const uploadedImageID = useImgActionStore((state) => state.uploadedImageID);
-
+  const url = getCldImageUrl({
+    width: 500,
+    height: 500,
+    src: uploadedImageID,
+    replaceBackground: "with dracula",
+  });
   return (
     <div className="flex items-center justify-center p-8">
       {" "}
-      {uploadedImage && (
-        <div>
+      {uploadedImage && url && (
+        <div className="md:w-1/2 sm:w-3/4 w-full">
           <h3>Uploaded Image: {uploadedImageID ? uploadedImageID : ""}</h3>
-          <Image width={500} height={500} src={uploadedImage} alt="Uploaded" />
+          <ReactCompareImage
+            hover={true}
+            leftImage={uploadedImage}
+            rightImage={url}
+          />
         </div>
       )}
-      {/* <CldImage
-        width="960"
-        height="600"
-        src={uploadedImage}
-        sizes="100vw"
-        alt="Description of my image"
-      /> */}
     </div>
   );
 };

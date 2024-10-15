@@ -14,18 +14,20 @@
     "next": "14.2.15",
     "next-cloudinary": "^6.14.1",
     "react": "^18",
+    "react-compare-image": "^3.4.0",
     "react-dom": "^18",
     "react-icons": "^5.3.0",
     "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "two-up-element": "^1.0.1",
     "typescript": "^5"
   }
 }
