@@ -13,7 +13,9 @@ import Image from "next/image";
 const Footer = () => {
   const pathname = usePathname();
   const setUploadedImage = useImgActionStore((state) => state.setUploadedImage);
-  const uploadedImage = useImgActionStore((state) => state.uploadedImage);
+  const setUploadedImageId = useImgActionStore(
+    (state) => state.setUploadedImageID
+  );
 
   return (
     <div className="h-20 px-2 bg-pumpkinOrange justify-center items-start gap-2 inline-flex w-full fixed bottom-0 left-0 ">
@@ -126,6 +128,7 @@ const Footer = () => {
           uploadPreset="upload-unsigned-images"
           onSuccess={(results) => {
             setUploadedImage(results.info?.url);
+            setUploadedImageId(results.info?.public_id);
           }}
           options={{
             sources: ["local"],

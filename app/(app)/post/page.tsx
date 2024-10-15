@@ -9,13 +9,14 @@ import React from "react";
 const Page = () => {
   const uploadedImage = useImgActionStore((state) => state.uploadedImage);
   console.log(uploadedImage);
+  const uploadedImageID = useImgActionStore((state) => state.uploadedImageID);
 
   return (
     <div className="flex items-center justify-center p-8">
       {" "}
       {uploadedImage && (
         <div>
-          <h3>Uploaded Image:</h3>
+          <h3>Uploaded Image: {uploadedImageID ? uploadedImageID : ""}</h3>
           <Image width={500} height={500} src={uploadedImage} alt="Uploaded" />
         </div>
       )}
