@@ -23,9 +23,7 @@ const Header = () => {
 
       <div className=" shrink basis-0 h-20 py-3 gap-4 justify-center items-center inline-flex w-1/4">
         {session ? (<MdHeartBroken className="w-8 h-8 text-black" />) : null}
-        <Link href="/">
-          {session ? (<RiLogoutBoxFill onClick={() => signOut()} className="w-8 h-8 text-black" />) : (<RiLoginBoxFill className="w-8 h-8 text-black" />)}
-        </Link>
+        {session ? (<RiLogoutBoxFill onClick={() => signOut()} className="w-8 h-8 text-black" />) : (<Link href="/"><RiLoginBoxFill className="w-8 h-8 text-black" /></Link>)}
       </div>
     </div>
   );
