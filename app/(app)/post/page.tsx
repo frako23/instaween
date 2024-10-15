@@ -1,21 +1,33 @@
 "use client";
+
+import { useImgActionStore } from "@/store/imgActions";
 import { CldImage } from "next-cloudinary";
+import Image from "next/image";
 import React from "react";
 
 // By default, the CldImage component applies auto-format and auto-quality to all delivery URLs for optimized delivery.
-const page = () => {
+const Page = () => {
+  const uploadedImage = useImgActionStore((state) => state.uploadedImage);
+  console.log(uploadedImage);
+
   return (
-    <CldImage
-      src="cld-sample-5" // Use this sample image or upload your own via the Media Explorer
-      width="500" // Transform the image: auto-crop to square aspect_ratio
-      height="500"
-      alt="upload Image"
-      crop={{
-        type: "auto",
-        source: true,
-      }}
-    />
+    <div className="flex items-center justify-center p-8">
+      {" "}
+      {uploadedImage && (
+        <div>
+          <h3>Uploaded Image:</h3>
+          <Image width={500} height={500} src={uploadedImage} alt="Uploaded" />
+        </div>
+      )}
+      {/* <CldImage
+        width="960"
+        height="600"
+        src={uploadedImage}
+        sizes="100vw"
+        alt="Description of my image"
+      /> */}
+    </div>
   );
 };
 
-export default page;
+export default Page;

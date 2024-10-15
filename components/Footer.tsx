@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { GiVampireDracula } from "react-icons/gi";
 import { BiSolidCameraPlus } from "react-icons/bi";
 import { GiGraveyard } from "react-icons/gi";
@@ -8,10 +7,13 @@ import { GiEvilBook } from "react-icons/gi";
 import Link from "next/link";
 import { CldUploadWidget } from "next-cloudinary";
 import { usePathname } from "next/navigation";
+import { useImgActionStore } from "@/store/imgActions";
+import Image from "next/image";
 
 const Footer = () => {
   const pathname = usePathname();
-  console.log(pathname);
+  const setUploadedImage = useImgActionStore((state) => state.setUploadedImage);
+  const uploadedImage = useImgActionStore((state) => state.uploadedImage);
 
   return (
     <div className="h-20 px-2 bg-pumpkinOrange justify-center items-start gap-2 inline-flex w-full fixed bottom-0 left-0 ">
@@ -83,6 +85,7 @@ const Footer = () => {
           className={`shrink basis-0 flex-col justify-center items-center gap-2.5 inline-flex ${
             pathname !== "/home" &&
             pathname !== "/find" &&
+            pathname !== "/post" &&
             "bg-black rounded-lg"
           }`}
         >
@@ -91,7 +94,9 @@ const Footer = () => {
               <div className="w-6 h-6 relative">
                 <GiVampireDracula
                   className={`w-8 h-8 ${
-                    pathname !== "/home" && pathname !== "/find"
+                    pathname !== "/home" &&
+                    pathname !== "/find" &&
+                    pathname !== "/post"
                       ? "text-sweetYellowCorn"
                       : "text-black"
                   }`}
@@ -101,7 +106,9 @@ const Footer = () => {
           </div>
           <div
             className={`self-stretch text-center ${
-              pathname !== "/home" && pathname !== "/find"
+              pathname !== "/home" &&
+              pathname !== "/find" &&
+              pathname !== "/post"
                 ? "text-sweetYellowCorn"
                 : "text-black"
             }  font-semibold text-xl leading-none pb-2 tracking-wide`}
@@ -111,16 +118,31 @@ const Footer = () => {
         </div>
       </Link>
 
-      <div
-        // href="/post"
+      <Link
+        href="/post"
         className=" shrink basis-0 h-20 py-3 flex-col justify-center items-center gap-1 inline-flex"
       >
         <CldUploadWidget
           uploadPreset="upload-unsigned-images"
+          onSuccess={(results) => {
+            setUploadedImage(results.info?.url);
+          }}
           options={{
             sources: ["local"],
             multiple: false,
             maxFiles: 1,
+            language: "en",
+            text: {
+              en: {
+                menu: {
+                  files: "👻 InstaWEEN 🎃",
+                },
+                local: {
+                  dd_title_single:
+                    "Drag and Drop your 📷 Here and watch the Spooky 👻 AI Magic 🔮",
+                },
+              },
+            },
           }}
         >
           {({ open }) => {
@@ -134,7 +156,7 @@ const Footer = () => {
             );
           }}
         </CldUploadWidget>
-      </div>
+      </Link>
     </div>
   );
 };

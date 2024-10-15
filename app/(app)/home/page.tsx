@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <main className="min-h-screen">
       <main>
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

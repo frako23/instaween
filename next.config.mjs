@@ -10,6 +10,7 @@ const nextConfig = {
       "m.media-amazon.com",
       "www.woodtv.com",
       "img.freepik.com",
+      "res.cloudinary.com",
     ],
   },
 };
