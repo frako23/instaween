@@ -8,10 +8,17 @@ const handler = NextAuth({
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID as string,
-            clientSecret: process.env.GOOGLE_CLIEN_SECRET as string,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
         }),
+
         // ...add more providers here
     ],
+    secret: process.env.NEXTAUTH_SECRET,
+    callbacks: {
+        async redirect() {
+            return "/home";
+        },
+    },
 })
 
 export { handler as GET, handler as POST }
