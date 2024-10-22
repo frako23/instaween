@@ -27,7 +27,7 @@ export default function Login() {
                 </div>
               </div> */}
               <a
-                href="/post"
+                href="/home"
                 className="self-stretch h-[62px] px-5 py-3 bg-black rounded-xl border border-[#e3e2e4] flex-col justify-start items-start gap-2.5 flex"
               >
                 <div className="self-stretch pr-2.5 justify-start items-center gap-[18px] inline-flex">
