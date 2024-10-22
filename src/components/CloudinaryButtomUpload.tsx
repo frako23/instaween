@@ -55,10 +55,14 @@ const UploadWidget = () => {
       const img = new Image();
       img.src =
         from === "face" && gender !== null && to !== null
-          ? `https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_replace:from_face;to_a%20${gender + "%20" + to}%20${from};preserve-geometry_true/${storedImg?.public_id}?_a=DAJAUVWIZAA0`
+          ? `https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_replace:from_face;to_a%20${
+              gender + "%20" + to
+            }%20${from};preserve-geometry_true/${
+              storedImg?.public_id
+            }?_a=DAJAUVWIZAA0`
           : from === "background" && to !== null
-            ? `https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_background_replace:prompt_${to}/${storedImg?.public_id}.jpg`
-            : storedImg?.secure_url;
+          ? `https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_background_replace:prompt_${to}/${storedImg?.public_id}.jpg`
+          : storedImg?.secure_url;
 
       img.onload = () => setLoading(false);
     }
@@ -69,24 +73,28 @@ const UploadWidget = () => {
       {loading && <SpookyLoader />}
       {from == null ? (
         <div
-          className={`flex justify-around gap-4 ${from === "face" && "hidden"}  ${from === "background" && "hidden"}`}
+          className={`flex justify-around gap-4 ${
+            from === "face" && "hidden"
+          }  ${from === "background" && "hidden"}`}
         >
           <button
             onClick={() => setFrom("face")}
-            className="md:text-6xl sm:text-4xl text-2xl  bg-sweetYellowCorn  text-black font-bold w-fit hover:bg-black hover:text-sweetYellowCorn py2 px-4 rounded"
+            className="md:text-6xl sm:text-4xl text-2xl  bg-darkPurple  text-ghostGreen font-bold w-fit hover:bg-black hover:text-sweetYellowCorn py2 px-4 rounded"
           >
             Selfie 💀
           </button>
           <button
             onClick={() => setFrom("background")}
-            className="md:text-6xl sm:text-4xl text-2xl bg-sweetYellowCorn  text-black font-bold w-fit hover:bg-black hover:text-sweetYellowCorn py2 px-4 rounded"
+            className="md:text-6xl sm:text-4xl text-2xl bg-darkPurple  text-ghostGreen font-bold w-fit hover:bg-black hover:text-sweetYellowCorn py2 px-4 rounded"
           >
             Background ⛺
           </button>
         </div>
       ) : from == "face" && gender === null ? (
         <div
-          className={`flex justify-around gap-4 ${from === "face" || (from === "background" && "hidden")}`}
+          className={`flex justify-around gap-4 ${
+            from === "face" || (from === "background" && "hidden")
+          }`}
         >
           <button
             onClick={() => setGender("male")}
@@ -112,7 +120,9 @@ const UploadWidget = () => {
 
       {gender !== null && storedImg !== null && (
         <div
-          className={`flex justify-around gap-4 ${from === "face" || (from === "background" && "hidden")}`}
+          className={`flex justify-around gap-4 ${
+            from === "face" || (from === "background" && "hidden")
+          }`}
         >
           <button
             onClick={() => setTo("werewolf")}
@@ -143,7 +153,9 @@ const UploadWidget = () => {
 
       {from === "background" && storedImg !== null && (
         <div
-          className={`flex justify-around gap-4 ${from !== "background" && "hidden"}`}
+          className={`flex justify-around gap-4 ${
+            from !== "background" && "hidden"
+          }`}
         >
           <button
             onClick={() => setTo(BACKGROUND.ghost)}
@@ -182,10 +194,14 @@ const UploadWidget = () => {
               leftImage={storedImg?.secure_url}
               rightImage={
                 from === "face" && gender !== null && to !== null
-                  ? `https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_replace:from_face;to_a%20${gender + "%20" + to}%20${from};preserve-geometry_true/${storedImg?.public_id}?_a=DAJAUVWIZAA0`
+                  ? `https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_replace:from_face;to_a%20${
+                      gender + "%20" + to
+                    }%20${from};preserve-geometry_true/${
+                      storedImg?.public_id
+                    }?_a=DAJAUVWIZAA0`
                   : from === "background" && to !== null
-                    ? `https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_background_replace:prompt_${to}/${storedImg?.public_id}.jpg`
-                    : storedImg?.secure_url
+                  ? `https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_background_replace:prompt_${to}/${storedImg?.public_id}.jpg`
+                  : storedImg?.secure_url
               }
             />
           </div>
@@ -194,7 +210,11 @@ const UploadWidget = () => {
       {to !== null && from == "face" ? (
         <DownloadButton
           fileName="instaWEEN.jpg"
-          fileUrl={`https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_replace:from_${from};to_a%20${gender + "%20" + to}%20${from};preserve-geometry_true/${storedImg?.public_id}?_a=DAJAUVWIZAA0`}
+          fileUrl={`https://res.cloudinary.com/ddsxxfyir/image/upload/e_gen_replace:from_${from};to_a%20${
+            gender + "%20" + to
+          }%20${from};preserve-geometry_true/${
+            storedImg?.public_id
+          }?_a=DAJAUVWIZAA0`}
         />
       ) : to !== null && from == "background" ? (
         <DownloadButton

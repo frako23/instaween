@@ -1,6 +1,6 @@
 export const SpookyLoader = () => {
   return (
-    <div className="spooky-body fixed z-10">
+    <div className="spooky-body fixed z-10 top-0">
       <div className="ghost">
         <div className="ghost-body">
           <div className="ghost-mouth"></div>
