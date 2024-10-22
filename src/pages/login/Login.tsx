@@ -17,7 +17,7 @@ export default function Login() {
                 InstaWEEN
               </div>
               <div className="self-stretch text-center text-black text-2xl font-bold  py-5">
-                An Instagram Powered by Cloudfare Spooky AI Creation
+                An Instagram Powered by Cloudinary Spooky AI Creation
               </div>
               {/* <ButtonLogin text={"Sign in with Facebook"} icon={<FacebookIcon />} /> */}
               {/* <ButtonLogin text={"Sign in with Google"} icon={<GoogleIcon />} /> */}
